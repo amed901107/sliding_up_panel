@@ -401,12 +401,9 @@ class _SlidingUpPanelState extends State<SlidingUpPanel>
                               : FadeTransition(
                                   opacity:
                                       Tween(begin: 1.0, end: 0.0).animate(_ac),
-
                                   // if the panel is open ignore pointers (touch events) on the collapsed
                                   // child so that way touch events go through to whatever is underneath
-                                  child: IgnorePointer(
-                                      ignoring: _isPanelOpen,
-                                      child: widget.collapsed),
+                                  child: widget.collapsed,
                                 ),
                         ),
                       ),
